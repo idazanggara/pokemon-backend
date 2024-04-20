@@ -21,7 +21,7 @@ router.get('/my-pokemon', (req, res) => {
 router.post('/catch', (req, res) => {
   const pokemon = req.body
   if (Math.random() < 0.5) {
-    caughtPokemons.push(pokemon)
+    // caughtPokemons.push(pokemon)
     // console.log(caughtPokemons, "===")
     res.json({ success: true, pokemon })
   } else {
