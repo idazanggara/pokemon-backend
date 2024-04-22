@@ -1,4 +1,4 @@
-let renameCounters = {}  // Stores Fibonacci counters and base names for each Pokémon
+let renameCounters = {}
 
 function nextFibonacci(pokemonId) {
     if (!renameCounters[pokemonId]) {
@@ -8,11 +8,10 @@ function nextFibonacci(pokemonId) {
     let fib = renameCounters[pokemonId]
     let next
 
-    // Memeriksa jika ini adalah pemanggilan pertama (kedua current dan prev adalah 0)
     if (fib.current === 0 && fib.prev === 0) {
-        next = 1 // Memulai dari 1 untuk langkah selanjutnya
+        next = 1
     } else {
-        next = fib.current + fib.prev // Fibonacci normal
+        next = fib.current + fib.prev
     }
 
     fib.prev = fib.current
