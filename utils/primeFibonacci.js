@@ -2,11 +2,19 @@ let renameCounters = {}  // Stores Fibonacci counters and base names for each Po
 
 function nextFibonacci(pokemonId) {
     if (!renameCounters[pokemonId]) {
-        renameCounters[pokemonId] = { current: 1, prev: 0, count: 0 }
+        renameCounters[pokemonId] = { current: 0, prev: 0, count: 0 }
     }
 
     let fib = renameCounters[pokemonId]
-    let next = fib.current + fib.prev
+    let next
+
+    // Memeriksa jika ini adalah pemanggilan pertama (kedua current dan prev adalah 0)
+    if (fib.current === 0 && fib.prev === 0) {
+        next = 1 // Memulai dari 1 untuk langkah selanjutnya
+    } else {
+        next = fib.current + fib.prev // Fibonacci normal
+    }
+
     fib.prev = fib.current
     fib.current = next
     return fib.prev
@@ -18,7 +26,7 @@ function getBaseName(pokemonId) {
 
 function setBaseName(pokemonId, baseName) {
     if (!renameCounters[pokemonId]) {
-        renameCounters[pokemonId] = { current: 1, prev: 0, count: 0, baseName: baseName }
+        renameCounters[pokemonId] = { current: 0, prev: 0, count: 0, baseName: baseName }
     }
 }
 
