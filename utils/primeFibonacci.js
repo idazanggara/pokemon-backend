@@ -16,6 +16,7 @@ function nextFibonacci(pokemonId) {
 
     fib.prev = fib.current
     fib.current = next
+    // console.log(renameCounters, "====")
     return fib.prev
 }
 
@@ -31,9 +32,10 @@ function setBaseName(pokemonId, baseName) {
 
 function resetFibonacciSequence(pokemonId) {
     if (renameCounters[pokemonId]) {
-        renameCounters[pokemonId].current = 1
-        renameCounters[pokemonId].prev = 0
-        renameCounters[pokemonId].count = 0
+        // renameCounters[pokemonId].current = 1
+        // renameCounters[pokemonId].prev = 0
+        // renameCounters[pokemonId].count = 0
+        delete renameCounters[pokemonId]
         return true
     }
     return false

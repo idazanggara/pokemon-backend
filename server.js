@@ -11,7 +11,7 @@ const port = process.env.PORT || 8080
 
 app.use(cors())
 
-app.use(bodyParser.json({ limit: '50mb' }))  // Default is usually '100kb'
+app.use(bodyParser.json({ limit: '50mb' }))  // Default '100kb'
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
 app.use(bodyParser.json())
 app.use(express.json())
